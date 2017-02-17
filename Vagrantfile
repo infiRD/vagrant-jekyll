@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "v0rtex/xenial64"
   #config.vm.box = "ubuntu/xenial64"
 
-  config.vm.hostname = "scibox"
+  config.vm.hostname = "jekyllbox"
 
   config.vm.provider "virtualbox" do |vb|
      vb.customize [
@@ -43,15 +43,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, privileged: false, :path => ".provision/crucial.sh"
   # replace shell with oh-my-zsh
   config.vm.provision :shell, privileged: false, :path => ".provision/installOhMyZsh.sh"
+  
   # run bootstraping script (main)
   config.vm.provision :shell, privileged: false, :path => ".provision/bootstrap.sh"
-  # run Julia bootstraping script
-  config.vm.provision :shell, privileged: false, :path => ".provision/bootstrapJulia.jl"
-  # run configure Jupyter script
-  config.vm.provision :shell, privileged: false, :path => ".provision/configureJupyter.sh"
+  
   # cleanup after provisioning
   config.vm.provision :shell, privileged: false, :path => ".provision/cleanup.sh"
-  
   # ------------------------------------------------------------------------
 
 
@@ -59,12 +56,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
 
-  config.vm.network "forwarded_port", guest: 8888, host: 8888, auto_correct: true
-  config.vm.network "forwarded_port", guest: 8000, host: 8000, auto_correct: true
+  config.vm.network "forwarded_port", guest: 4000, host: 4000, auto_correct: true
+  config.vm.network "forwarded_port", guest: 35729, host: 35729, auto_correct: true
   
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.68.8"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -107,9 +104,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # ============================= always run =============================
-  config.vm.provision "shell", run: "always", privileged: false, inline: <<-SHELL
-    jupyter notebook --notebook-dir=~/projects &
-  SHELL
+  
+  # -- placeholder --
+  
   # ----------------------------------------------------------------------
 
 end
