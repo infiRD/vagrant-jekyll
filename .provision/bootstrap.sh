@@ -15,7 +15,6 @@ sudo rm -rf /usr/share/ruby-rvm /etc/rvmrc /etc/profile.d/rvm.sh
 echo "Installing latest version of ruby..."
 curl -L https://get.rvm.io | bash -s stable --ruby --autolibs=enable --auto-dotfiles
 
-
 # ===================================================================================
 # install nodeJS: 
 # refer to:
@@ -29,13 +28,3 @@ echo "Installing latest version of nodeJS..."
 sudo apt-get install -y curl
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
-
-
-# ===================================================================================
-# install jekyll stuff:
-
-gem install github-pages therubyracer bundler jekyll-livereload --no-ri --no-rdoc
-
-
-
-

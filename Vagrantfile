@@ -46,7 +46,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   # run bootstraping script (main)
   config.vm.provision :shell, privileged: false, :path => ".provision/bootstrap.sh"
-  
+  # run bootstraping script for ruby gems
+  config.vm.provision :shell, privileged: false, :path => ".provision/bootstrapRubyGems.sh"
+
   # cleanup after provisioning
   config.vm.provision :shell, privileged: false, :path => ".provision/cleanup.sh"
   # ------------------------------------------------------------------------
@@ -105,7 +107,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # ============================= always run =============================
   
-  # -- placeholder --
+  # config.vm.provision "shell", run: "always", privileged: false, inline: <<-SHELL
+  #   echo "-- placeholder --"
+  # SHELL
   
   # ----------------------------------------------------------------------
 
