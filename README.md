@@ -3,14 +3,16 @@
 Vagrant box aimed at bootstraping the work with [jekyll](https://github.com/jekyll/jekyll)
 and/or [github pages](https://pages.github.com/). It supports live-reload
 regime by using [jekyll-livereload](https://github.com/RobertDeRose/jekyll-livereload)
-jekyll plugin.
+plugin.
 
 Project is currently in pre-alpha stage.
 
 ## Getting Started
 
 First of all you will need to install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-and [vagrant](https://www.vagrantup.com/docs/installation/). Then:
+and [vagrant](https://www.vagrantup.com/docs/installation/). 
+
+Then:
 
 ```bash
 cd ~
