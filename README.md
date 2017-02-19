@@ -5,8 +5,6 @@ and/or [github pages](https://pages.github.com/). It supports live-reload
 regime by using [jekyll-livereload](https://github.com/RobertDeRose/jekyll-livereload)
 plugin.
 
-Project is currently in pre-alpha stage.
-
 ## Getting Started
 
 First of all you will need to install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
