@@ -78,6 +78,8 @@ config.vm.network "private_network", ip: "192.168.68.8"
 - [jekyll](https://github.com/jekyll/jekyll) - Static site generator
 - [Github Pages](https://pages.github.com/)
 - [RobertDeRose/jekyll-livereload](https://github.com/RobertDeRose/jekyll-livereload) - jekyll live-reload plugin
+- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+- [LS_COLORS](https://github.com/trapd00r/LS_COLORS)
 
 ## Versioning
 
